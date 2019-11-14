@@ -2,7 +2,13 @@ var db = require('../db');
 
 module.exports = {
   messages: {
-    get: function () {}, // a function which produces all the messages
+    get: function () {
+      db.connect();
+      const queryString = 'SELECT messages.time, messages.text, users.name, room.name FROM messages ';
+      db.query(queryString)
+
+
+    }, // a function which produces all the messages
     post: function () {} // a function which can be used to insert a message into the database
   },
 
