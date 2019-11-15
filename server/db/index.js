@@ -1,15 +1,14 @@
 var mysql = require('mysql');
 
-var dbConnection = mysql.createConnection({
+
+var db = mysql.createConnection({
   user: 'root',
   password: 'plantlife',
   database: 'chat'
 });
-// dbConnection.connect();
+// db.connect();
 
-module.exports = {
-  db: dbConnection
-};
+module.exports = db;
 
 // Create a database connection and export it from this file.
 // You will need to connect with the user "root", no password,
