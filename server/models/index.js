@@ -7,7 +7,7 @@ module.exports = {
   messages: {
     get: function () {
       // db.connect();
-      const queryString = 'SELECT messages.text, messages.time, users.name AS username, room.name AS roomname FROM messages INNER JOIN users ON messages.user_id = users.id INNER JOIN room ON messages.room_id = room.id ORDER BY messages.time ASC';
+      const queryString = 'SELECT messages.id, messages.text, messages.time, users.name AS username, room.name AS roomname FROM messages INNER JOIN users ON messages.user_id = users.id INNER JOIN room ON messages.room_id = room.id ORDER BY messages.time ASC';
       return db.queryAsync(queryString).then((results) => {
         // db.end();
         return results;
